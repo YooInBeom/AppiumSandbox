@@ -8,7 +8,7 @@ GOOGLE_PASSWORD = os.environ['GOOGLE_PASSWORD']
 desired_cap = {
   "appium:deviceName": "R3CM906NL0V",
   "platformName": "Android",
-  "appium:app": "D:\\util\\AirMirror Remote control_v1.1.2.2.apk"
+  "appium:app": "D:/util/AirMirror Remote control_v1.1.2.2.apk"
 }
 
 driver = webdriver.Remote("http://localhost:4723/wd/hub", desired_cap)
