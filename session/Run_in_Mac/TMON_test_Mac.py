@@ -33,3 +33,4 @@ activityname = driver.current_activity
 filename = activityname+ts
 time.sleep(3)
 driver.save_screenshot("/Users/yooinbeom/PycharmProjects/AppiumSandbox/Screenshots/"+filename+".png")
+
