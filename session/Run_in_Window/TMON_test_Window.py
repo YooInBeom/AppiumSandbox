@@ -1,5 +1,5 @@
 import time
-
+import datetime
 from appium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -24,12 +24,19 @@ driver.find_element(By.ID, "com.tmon:id/btn_cancel").click()
 """Search"""
 driver.find_element(By.ID, "com.tmon:id/keyword").click()
 driver.find_element(By.XPATH, "//android.widget.EditText[@resource-id='search_input']").click()
+driver.find_element(By.XPATH, "//android.widget.EditText[@resource-id='search_input']").clear()
 driver.find_element(By.XPATH, "//android.widget.EditText[@resource-id='search_input']").set_value("iphone")
 driver.find_element(By.XPATH, "//android.widget.Button[@text='검색']").click()
 
+
 """Take Screenshot"""
 ts = time.strftime("%Y_%m_%d_%H%M%S")
-activityname = driver.current_activity
-filename = activityname+ts
+filename = ts
 time.sleep(3)
 driver.save_screenshot("C:/Users/inbeom/PycharmProjects/AppiumSandbox/Screenshots/"+filename+".png")
+
+"""click first box"""
+driver.find_element(By.XPATH, "//android.widget.RelativeLayout[@content-desc='Main Search WebView']/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[2]/android.view.View[4]/android.widget.ListView/android.view.View[1]").click()
+time.sleep(3)
+driver.save_screenshot("C:/Users/inbeom/PycharmProjects/AppiumSandbox/Screenshots/"+filename+".png")
+
